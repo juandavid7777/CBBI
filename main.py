@@ -23,6 +23,7 @@ from metrics.rupl import RUPLMetric
 from metrics.trolololo import TrolololoMetric
 from metrics.two_year_moving_average import TwoYearMovingAverageMetric
 from metrics.woobull_topcap_cvdd import WoobullMetric
+from metrics.ma_log_rat import MALogRatMetric
 from utils import format_percentage, get_color
 
 
@@ -40,6 +41,7 @@ def get_metrics() -> list[BaseMetric]:
         MVRVMetric(),
         ReserveRiskMetric(),
         WoobullMetric(),
+        MALogRatMetric(),
     ]
 
 
@@ -109,7 +111,6 @@ def run(json_file: str,
         metrics_descriptions.append(metric.description)
 
     print('Generating charts…')
-    print(charts_file_path)
     plt.savefig(charts_file_path)
 
     confidence_col = 'Confidence'
