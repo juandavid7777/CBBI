@@ -109,6 +109,7 @@ def run(json_file: str,
         metrics_descriptions.append(metric.description)
 
     print('Generating charts…')
+    print(charts_file_path)
     plt.savefig(charts_file_path)
 
     confidence_col = 'Confidence'
